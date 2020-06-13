@@ -1,0 +1,67 @@
+
+.itemName{
+    text-align: center ;
+    overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+}
+
+.img{
+    height: 100%;
+    width: 100%;
+    border: 1px solid #cccccc;
+    background-color: #FFFFFF;
+    padding: 1px;
+    object-fit : contain;
+}
+
+
+
+.price{
+    height: 100%;
+    width: 100%;
+    padding: 1px;
+    text-align-last: center;
+}
+
+.disabledButton{
+    cursor : not-allowed;
+}
+
+.enableButton{
+    cursor: pointer;
+}
+
+.prices{
+  
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+     
+     -webkit-column-gap:20px;
+    -moz-column-gap:20px;
+    column-gap:20px;
+    
+}
+
+.fiyat {
+    text-decoration:line-through;
+    
+}
+
+.ifiyat{
+    color : rgb(230, 22, 22);
+    display: unset;
+    
+}
+
+.scrollbutton {
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 10px; /* Place the button 30px from the right */
+    z-index: 98; /* Make sure it does not overlap */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 20   px; /* Increase font size */
+  }
