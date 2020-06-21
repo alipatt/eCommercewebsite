@@ -44,6 +44,38 @@ export default class ProductCategory extends Component {
       <div className="py-4 ">
         <Form onSubmit={this.onHandleSumbit}>
           <Row>
+          <Col xs="12" sm="3" md="12" lg="12">
+              <FormGroup>
+                <Label for="cinsiyet" className="cName">
+                  Cinsiyet
+                </Label>
+              </FormGroup>
+              <FormGroup>
+                <Label check>
+                  <Input
+                    id="erkek"
+                    name="erkek"
+                    value="false"
+                    type="checkbox"
+                    onChange={this.onHandleChange}
+                  />{" "}
+                  Erkek
+                </Label>
+              </FormGroup>
+              <FormGroup>
+                <Label check>
+                  <Input
+                    id="kadin"
+                    name="kadin"
+                    value="kadin"
+                    type="checkbox"
+                    onChange={this.onHandleChange}
+                  />{" "}
+                  Kadın
+                </Label>
+                {/* <Button onClick={this.click}>sad</Button>  */}
+              </FormGroup>
+            </Col>
             <Col xs="12" sm="3" md="12" lg="12">
               <FormGroup>
                 <Label for="kategori" className="cName">
@@ -99,38 +131,7 @@ export default class ProductCategory extends Component {
                 </Label>
               </FormGroup>
             </Col>
-            <Col xs="12" sm="3" md="12" lg="12">
-              <FormGroup>
-                <Label for="cinsiyet" className="cName">
-                  Cinsiyet
-                </Label>
-              </FormGroup>
-              <FormGroup>
-                <Label check>
-                  <Input
-                    id="erkek"
-                    name="erkek"
-                    value="false"
-                    type="checkbox"
-                    onChange={this.onHandleChange}
-                  />{" "}
-                  Erkek
-                </Label>
-              </FormGroup>
-              <FormGroup>
-                <Label check>
-                  <Input
-                    id="kadin"
-                    name="kadin"
-                    value="kadin"
-                    type="checkbox"
-                    onChange={this.onHandleChange}
-                  />{" "}
-                  Kadın
-                </Label>
-                {/* <Button onClick={this.click}>sad</Button>  */}
-              </FormGroup>
-            </Col>
+            
             <Col xs="12" sm="3" md="12" lg="12">
               <FormGroup>
                 <Label for="beden" className="cName" check>
