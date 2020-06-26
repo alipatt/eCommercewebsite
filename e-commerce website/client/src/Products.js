@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import jwt_decode from 'jwt-decode'
+import jwt_decode from "jwt-decode";
 import "./Cssfile/Product.css";
 import "./Cssfile/PCategory.css";
 import { Container, Row, Col, Button, ButtonGroup } from "reactstrap";
@@ -7,33 +7,31 @@ import ProductCategory from "./ProductCategory";
 import Navi from "./NavBar/Navi";
 import Chatbot from "./chatbot/Chatbot";
 export default class Products extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-  this.state = {
-    dCategory: [],
-    is_visible: false,
-    help: false,
-    name: []
-  };
-}
+    this.state = {
+      dCategory: [],
+      is_visible: false,
+      help: false,
+      name: [],
+    };
+  }
   componentDidMount() {
     var scrollComponent = this;
     document.addEventListener("scroll", function(e) {
       scrollComponent.toggleVisibility();
     });
 
-    
-    if(localStorage.usertoken){
-    const token = localStorage.usertoken
-    const decoded = jwt_decode(token)
-    var name=[decoded.first_name , decoded.last_name]
-    this.setState({
-      name
-    })
+    if (localStorage.usertoken) {
+      const token = localStorage.usertoken;
+      const decoded = jwt_decode(token);
+      var name = [decoded.first_name, decoded.last_name];
+      this.setState({
+        name,
+      });
+    }
   }
-}
 
-  
   toggleVisibility() {
     if (window.pageYOffset > 300) {
       this.setState({
@@ -173,29 +171,35 @@ export default class Products extends Component {
               {this.props.prices(product)}
               <ButtonGroup>
                 <Button
-                className={product.sizes ===0? "disabledButton" : "enableButton"}
-                  outline={product.sizes ===0? false : true }
-                  color={product.sizes ===0? "danger" : "success" }
+                  className={
+                    product.sizes === 0 ? "disabledButton" : "enableButton"
+                  }
+                  outline={product.sizes === 0 ? false : true}
+                  color={product.sizes === 0 ? "danger" : "success"}
                   onClick={() => this.props.AddToCart(product, "s")}
-                  disabled ={product.sizes ===0? true : false }
+                  disabled={product.sizes === 0 ? true : false}
                 >
                   s
                 </Button>
                 <Button
-                className={product.sizem ===0? "disabledButton" : "enableButton"}
-                  outline={product.sizem ===0? false : true }
-                  color={product.sizem ===0? "danger" : "success" }
+                  className={
+                    product.sizem === 0 ? "disabledButton" : "enableButton"
+                  }
+                  outline={product.sizem === 0 ? false : true}
+                  color={product.sizem === 0 ? "danger" : "success"}
                   onClick={() => this.props.AddToCart(product, "m")}
-                  disabled ={product.sizem ===0? true : false }
+                  disabled={product.sizem === 0 ? true : false}
                 >
                   m
                 </Button>
                 <Button
-                className={product.sizel ===0? "disabledButton" : "enableButton"}
-                  outline={product.sizel ===0? false : true }
-                  color={product.sizel ===0? "danger" : "success" }
+                  className={
+                    product.sizel === 0 ? "disabledButton" : "enableButton"
+                  }
+                  outline={product.sizel === 0 ? false : true}
+                  color={product.sizel === 0 ? "danger" : "success"}
                   onClick={() => this.props.AddToCart(product, "l")}
-                  disabled ={product.sizel ===0? true : false }
+                  disabled={product.sizel === 0 ? true : false}
                 >
                   l
                 </Button>
@@ -225,30 +229,36 @@ export default class Products extends Component {
             <div className="price">
               {this.props.prices(product)}
               <ButtonGroup>
-              <Button
-                className={product.sizes ===0? "disabledButton" : "enableButton"}
-                  outline={product.sizes ===0? false : true }
-                  color={product.sizes ===0? "danger" : "success" }
+                <Button
+                  className={
+                    product.sizes === 0 ? "disabledButton" : "enableButton"
+                  }
+                  outline={product.sizes === 0 ? false : true}
+                  color={product.sizes === 0 ? "danger" : "success"}
                   onClick={() => this.props.AddToCart(product, "s")}
-                  disabled ={product.sizes ===0? true : false }
+                  disabled={product.sizes === 0 ? true : false}
                 >
                   s
                 </Button>
                 <Button
-                className={product.sizem ===0? "disabledButton" : "enableButton"}
-                  outline={product.sizem ===0? false : true }
-                  color={product.sizem ===0? "danger" : "success" }
+                  className={
+                    product.sizem === 0 ? "disabledButton" : "enableButton"
+                  }
+                  outline={product.sizem === 0 ? false : true}
+                  color={product.sizem === 0 ? "danger" : "success"}
                   onClick={() => this.props.AddToCart(product, "m")}
-                  disabled ={product.sizem ===0? true : false }
+                  disabled={product.sizem === 0 ? true : false}
                 >
                   m
                 </Button>
                 <Button
-                className={product.sizel ===0? "disabledButton" : "enableButton"}
-                  outline={product.sizel ===0? false : true }
-                  color={product.sizel ===0? "danger" : "success" }
+                  className={
+                    product.sizel === 0 ? "disabledButton" : "enableButton"
+                  }
+                  outline={product.sizel === 0 ? false : true}
+                  color={product.sizel === 0 ? "danger" : "success"}
                   onClick={() => this.props.AddToCart(product, "l")}
-                  disabled ={product.sizel ===0? true : false }
+                  disabled={product.sizel === 0 ? true : false}
                 >
                   l
                 </Button>
@@ -281,6 +291,7 @@ export default class Products extends Component {
                 data={this.props.data}
               />
             </Col>
+
             <Col xs="12" sm="12" md="10" lg="10">
               {this.state.dCategory.length > 0
                 ? this.sCategory()

@@ -34,6 +34,7 @@ export default class AddProduct extends Component {
       sizel: this.state.sizel,
       gender: this.state.gender,
     };
+    console.log(data.price + " " + data.iprice)
     if(data.price > data.iprice){
     this.postData(data);
     }

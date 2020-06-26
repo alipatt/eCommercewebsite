@@ -121,8 +121,8 @@ export default class ProductCategory extends Component {
               <FormGroup>
                 <Label check>
                   <Input
-                    id="icgiyim"
-                    name="icgiyim"
+                    id="evgiyim"
+                    name="evgiyim"
                     value="false"
                     type="checkbox"
                     onChange={this.onHandleChange}
